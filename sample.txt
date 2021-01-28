@@ -3,4 +3,5 @@ Poll Scm
 pull request
 hello jenkins
 hello slack
+hello slack plus github
 
