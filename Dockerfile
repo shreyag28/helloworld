@@ -7,8 +7,6 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . .
 
-# Compile the Java program
-RUN javac Main.java
 
-# Run the Java program
-CMD ["java", "Main"]
+# Run the JAR file
+ENTRYPOINT ["java", "-jar", "helloworld-1.1.jar"]
