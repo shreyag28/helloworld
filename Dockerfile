@@ -1,7 +1,7 @@
 
 # Use an official OpenJDK runtime as a parent image
 FROM openjdk:11-jre-slim
-COPY helloworld-1.1.jar /app/helloworld-1.1.jar
+COPY /target/helloworld-1.1.jar /app/helloworld-1.1.jar
 WORKDIR /app
 # Set the working directory in the container
 #WORKDIR /app
