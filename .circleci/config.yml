@@ -20,14 +20,20 @@ jobs:
 
   docker-job:
      docker: 
-         - image: cruizba/ubuntu-dind
+         - image: innovative/ubuntu-maven-dind
      steps:   
          - checkout  
          - setup_remote_docker:
              version: 20.10.7
          - run:
-            name: dockerize 
-            command : |
+             name: Build
+             command: mvn -B -DskipTests clean package
+         - run:
+             name: Test
+             command: mvn clean install    
+         - run:
+             name: dockerize 
+             command : |
                        docker compose up --build
                        docker ps -a
                        docker cp ./pom.xml java-jar-app:/app
