@@ -12,7 +12,7 @@ services:
       - ./pom.xml:/app
 
   test:
-    build: .
+    #build: .
     command:
             - mvn clean install
             - ls 
