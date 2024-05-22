@@ -3,6 +3,7 @@
 FROM openjdk:11-jre-slim
 #COPY /project/target/helloworld-1.1.jar /app/helloworld-1.1.jar
 COPY . .
+CMD ["sh", "-c", "echo 'Current directory:' && pwd && echo 'Files:' && ls -l]
 WORKDIR /app
 # Set the working directory in the container
 #WORKDIR /app
