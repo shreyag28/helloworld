@@ -11,6 +11,6 @@ services:
       - .:/app
       - ./pom.xml:/app
 
-   test:
-      build: .
-      command: ls 
+  test:
+    build: .
+    command: ls 
