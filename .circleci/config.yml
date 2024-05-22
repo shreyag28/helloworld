@@ -26,6 +26,7 @@ jobs:
          - run:
             name: dockerize 
             command : |
+                       dpkg -l | grep apt-get
                        apt-get install sudo
                        sudo systemctl start docker
                        sudo docker compose up
