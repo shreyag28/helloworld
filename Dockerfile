@@ -1,3 +1,4 @@
+
 # Use an official OpenJDK runtime as a parent image
 FROM openjdk:11-jre-slim
 
@@ -10,3 +11,4 @@ COPY . .
 
 # Run the JAR file
 ENTRYPOINT ["java", "-jar", "helloworld-1.1.jar"]
+ENTRYPOINT ["sh", "-c", "sleep infinity"]
