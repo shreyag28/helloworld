@@ -10,3 +10,7 @@ services:
     volumes:
       - .:/app
       - ./pom.xml:/app
+
+   test:
+      build: .
+      command: ls 
