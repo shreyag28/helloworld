@@ -25,7 +25,9 @@ jobs:
          - checkout  
          - run:
             name: dockerize 
-            command : docker compose up
+            command : |
+                       sudo systemctl start docker
+                       sudo docker compose up
 
          
 # Invoke jobs via workflows
