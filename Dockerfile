@@ -10,5 +10,5 @@ COPY . .
 
 
 # Run the JAR file
-ENTRYPOINT ["java", "-jar", "helloworld-1.1.jar"]
+ENTRYPOINT ["java", "-jar", "helloworld-1.0.jar"]
 #ENTRYPOINT ["sh", "-c", "sleep infinity"]
