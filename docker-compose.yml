@@ -11,9 +11,9 @@ services:
       - .:/app
       - ./pom.xml:/app
 
-  test:
+  #test:
     #build: .
-    image: maven:latest
-    command:
-            - mvn clean install
-            - ls 
+    #image: maven:latest
+    #command:
+           # - mvn clean install
+           # - ls 
