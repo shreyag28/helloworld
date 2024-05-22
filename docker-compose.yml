@@ -2,8 +2,8 @@ version: '3.8'
 
 services:
   java-app:
-    command: sleep 3600
     build: .
+    command: sleep 3600
     container_name: java-jar-app
     ports:
       - "8080:8080" # Map port 8080 on the host to port 8080 in the container (if your app runs a web server)
