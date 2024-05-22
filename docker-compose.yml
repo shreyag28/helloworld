@@ -13,6 +13,7 @@ services:
 
   test:
     #build: .
+    image: maven:latest
     command:
             - mvn clean install
             - ls 
