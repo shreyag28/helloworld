@@ -7,7 +7,7 @@ WORKDIR /app
 
 # Copy the current directory contents into the container at /app
 #COPY . .
-COPY target/helloworld-1.0.jar /app/helloworld-1.0.jar
+COPY target/helloworld-1.1.jar /app/helloworld-1.1.jar
 
 
 # Run the JAR file
