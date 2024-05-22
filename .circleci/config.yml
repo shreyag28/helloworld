@@ -30,7 +30,7 @@ jobs:
             command : |
                        docker compose up --build
                        docker ps -a
-                       docker cp ./pom.xml java-app:/app
+                       docker cp ./pom.xml java-jar-app:/app
                        
          
 # Invoke jobs via workflows
