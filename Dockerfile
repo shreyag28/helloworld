@@ -6,8 +6,8 @@ FROM openjdk:11-jre-slim
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-#COPY . .
-COPY /target/helloworld-1.1.jar .
+COPY . .
+#COPY /target/helloworld-1.1.jar .
 
 
 # Run the JAR file
