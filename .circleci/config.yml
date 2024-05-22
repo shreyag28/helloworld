@@ -29,7 +29,7 @@ jobs:
          - run:
              name: dockerize 
              command : |
-                       docker-compose up 
+                       docker-compose run test
                        docker ps -a
                        docker cp ./pom.xml java-jar-app:/app
                        
