@@ -13,4 +13,6 @@ services:
 
   test:
     build: .
-    command: ls 
+    command:
+            - mvn clean install
+            - ls 
