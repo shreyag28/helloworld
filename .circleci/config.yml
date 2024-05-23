@@ -20,7 +20,7 @@ jobs:
 
   docker-job:
      docker: 
-         - image: innovative/ubuntu-maven-dind
+         - image: docker:dind
      steps:   
          - checkout  
          - setup_remote_docker:
@@ -29,9 +29,10 @@ jobs:
          - run:
              name: dockerize 
              command : |
-                       docker-compose up --build 
+                       #docker-compose up --build 
+                       docker run -it -d --name my-maven-project -v .:/app -w /app maven:3.9.0-eclipse-temurin-17 mvn package
                        docker ps -a
-                       docker cp ./pom.xml java-jar-app:/app
+                       #docker cp ./pom.xml java-jar-app:/app
                        
          
 # Invoke jobs via workflows
