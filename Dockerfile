@@ -3,7 +3,7 @@ FROM openjdk:11-jre-slim
 #COPY /project/target/helloworld-1.1.jar /app/helloworld-1.1.jar
 COPY . .
 WORKDIR /app
-CMD ["sh", "-c", "pwd"]
+#CMD ["sh", "-c", "pwd"]
 
 # Set the working directory in the container
 #WORKDIR /app
@@ -14,5 +14,5 @@ CMD ["sh", "-c", "pwd"]
 
 
 # Run the JAR file
-#ENTRYPOINT ["java", "-jar", "helloworld-1.1.jar"]
+ENTRYPOINT ["java", "-jar", "helloworld-1.1.jar"]
 #ENTRYPOINT ["sh", "-c", "sleep infinity"]
