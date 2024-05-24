@@ -13,8 +13,8 @@ services:
       - "8080:8080" # Map port 8080 on the host to port 8080 in the container (if your app runs a web server)
     volumes:
       - .:/app
-      #- ./pom.xml:/app
-      - ./pom.xml:/app/pom.xml
+      - ./pom.xml:/app
+     # - ./pom.xml:/app/pom.xml
 
   #test:
     #build: .
