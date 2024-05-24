@@ -2,9 +2,9 @@ version: '3.3'
 
 services:
   java-app:
-    build: .
-    command: sleep 3600
-    container_name: java-jar-app
+    image: maven:3.9.0-eclipse-temurin-17
+    command: docker run -it -d --name maven-project -v .:/app -w /app maven:3.9.0-eclipse-temurin-17 tail -f /dev/null mvn clean install
+    container_name: maven-project
     ports:
       - "8080:8080" # Map port 8080 on the host to port 8080 in the container (if your app runs a web server)
     volumes:
