@@ -29,7 +29,7 @@ jobs:
          - run:
              name: dockerize 
              command : |
-                       docker-compose up --build 
+                       docker-compose up -d
                        #docker run -it -d --name maven-project -v .:/app -w /app maven:3.9.0-eclipse-temurin-17 tail -f /dev/null mvn clean install
                        docker ps -a
                        docker cp ./pom.xml maven-project:/app
