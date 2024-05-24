@@ -30,9 +30,9 @@ jobs:
              name: dockerize 
              command : |
                        #docker-compose up --build 
-                       docker run -it -d --name my-maven-project -v .:/app -w /app maven:3.9.0-eclipse-temurin-17 mvn package
+                       docker run -it -d --name maven-project -v .:/app -w /app maven:3.9.0-eclipse-temurin-17 tail -f /dev/null mvn clean install
                        docker ps -a
-                       docker cp ./pom.xml my-maven-project:/app
+                       docker cp ./pom.xml maven-project:/app
                        
          
 # Invoke jobs via workflows
