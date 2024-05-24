@@ -3,10 +3,10 @@ version: '3.3'
 services:
   java-app:
     image: maven:3.9.0-eclipse-temurin-17
-    command: 
-          - tail -f /dev/null 
-          - mvn clean install
     container_name: maven-project
+    command: 
+          - /bin/sh -c "mvn clean install && tail -f /dev/null"
+            
     ports:
       - "8080:8080" # Map port 8080 on the host to port 8080 in the container (if your app runs a web server)
     volumes:
