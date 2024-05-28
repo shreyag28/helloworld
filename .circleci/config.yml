@@ -30,10 +30,23 @@ jobs:
              name: dockerize 
              command : |
                        docker-compose up -d
-                       docker-compose exec maven-project mvn package   
+                       #docker-compose exec maven-project mvn package   
                        #docker run -it -d --name maven-project -v .:/app -w /app maven:3.9.0-eclipse-temurin-17 tail -f /dev/null mvn clean install
-                       docker ps -a
+                       #docker ps -a
                        #docker cp ./pom.xml java-app:/app
+         - run:
+             name: Wait for Maven Container to be Ready
+             command: |
+                      # Wait until the container is running
+                      while [ $(docker inspect -f '{{.State.Running}}' maven-project) != "true" ]; do
+                        echo "Waiting for the Maven container to start..."
+                        sleep 1
+                      done
+                      echo "Maven container is running."
+        
+         - run:
+             name: Execute mvn package
+             command: docker exec maven-project mvn package              
                        
          
 # Invoke jobs via workflows
