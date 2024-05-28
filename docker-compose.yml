@@ -5,7 +5,7 @@ services:
     image: maven:3.9.0-eclipse-temurin-17
     #container_name: maven-project.
     #Command to run the container
-    command: " echo hello word "
+    command: " tail -f /dev/null "
     #command: command.sh
     working_dir: /app
 
@@ -20,4 +20,4 @@ services:
 
   test:
     <<: *java-app
-    command: echo "hello world"
+    command: " mvn package "
