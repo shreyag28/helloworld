@@ -6,7 +6,7 @@ services:
     #container_name: maven-project.
     #Command to run the container
     #command: tail -f /dev/null && mvn clean install
-    command: tail -f /dev/null
+    command: command.sh
     working_dir: /app
 
    # entrypoint: ["/bin/sh", "-c", "mvn clean install && tail -f /dev/null"]
@@ -18,10 +18,10 @@ services:
       - ./pom.xml:/app
      # - ./pom.xml:/app/pom.xml
 
-  test:
-    <<: *java-app
+    #test:
+    #<<: *java-app
   
-    command: 
-        - echo "hello"
-        - tail -f /dev/null
+   # command: 
+    #    - echo "hello"
+     #   - tail -f /dev/null 
            
