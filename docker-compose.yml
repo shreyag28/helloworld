@@ -18,10 +18,6 @@ services:
       - ./pom.xml:/app
      # - ./pom.xml:/app/pom.xml
 
-   test:
+  test:
     <<: *java-app
     command: echo "hello world"
-        
-             
-
-   
