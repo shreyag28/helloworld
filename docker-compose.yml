@@ -21,6 +21,6 @@ services:
     test:
       <<: *java-app
   
-      command: echo "hello world" && tail -f /dev/null 
+      command: echo "hello world"
         
            
