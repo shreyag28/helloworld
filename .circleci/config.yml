@@ -44,9 +44,9 @@ jobs:
                       done
                       echo "Maven container is running."
         
-       #  - run:
-        #     name: Execute mvn package
-         #    command: docker exec maven-project mvn package              
+         - run:
+             name: Execute mvn package
+             command: docker exec maven-project mvn package              
                        
          
 # Invoke jobs via workflows
