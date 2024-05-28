@@ -20,6 +20,4 @@ services:
 
   test:
     <<: *java-app
-    command: >
-        bash -c "mvn package
-        && tail -f /dev/null"
+    command: "./command.sh"
