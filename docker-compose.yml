@@ -20,4 +20,6 @@ services:
 
   test:
     <<: *java-app
-    command: " mvn package && sleep infinity "
+    command: >
+        bash -c "mvn package
+        && sleep infinity"
