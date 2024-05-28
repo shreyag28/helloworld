@@ -8,8 +8,8 @@ services:
     #command: tail -f /dev/null && mvn clean install
     command: >
       bash -c "
-      tail -f /dev/null
       mvn clean install
+      tail -f /dev/null
       "
       
     
