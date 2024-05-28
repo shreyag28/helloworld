@@ -9,6 +9,7 @@ services:
     command: >
       bash -c "
       tail -f /dev/null
+      echo 'Build complete'
       mvn clean install
       "
       
