@@ -1,11 +1,11 @@
 version: '3.3'
 
 services:
-  java-app: &java-app
+  java-app: 
     image: maven:3.9.0-eclipse-temurin-17
     #container_name: maven-project.
     #Command to run the container
-    command: " tail -f /dev/null "
+    command: "./command.sh"
     #command: command.sh
     working_dir: /app
 
@@ -18,6 +18,6 @@ services:
       - ./pom.xml:/app
      # - ./pom.xml:/app/pom.xml
 
-  test:
-    <<: *java-app
-    command: "./command.sh"
+  #test:
+  #  <<: *java-app
+   # command: "./command.sh"
