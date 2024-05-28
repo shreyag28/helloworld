@@ -4,6 +4,7 @@ services:
   java-app:
     image: maven:3.9.0-eclipse-temurin-17
     container_name: maven-project
+    #Command to run the container
     #command: /bin/sh -c "mvn clean install && tail -f /dev/null"
     command: tail -f /dev/null && mvn clean install
     working_dir: /app
