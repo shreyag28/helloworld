@@ -14,6 +14,9 @@ jobs:
   build-and-test:
     docker:
       - image: cimg/openjdk:11.0
+    parameters:
+      myparam:
+        type: string  
     steps:
       - checkout  
       - run:
