@@ -16,9 +16,7 @@ jobs:
       parallelism: << parameters.myparam >>    
     docker:
       - image: cimg/openjdk:11.0
-    parameters:
-      myparam:
-        type: string  
+  
     steps:
       - checkout  
      # - run: echo "The parameter value is  << pipeline.parameters.myparam >>"
