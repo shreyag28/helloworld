@@ -15,6 +15,7 @@ jobs:
         type: integer
     steps:
       - checkout
+      - run: echo "The parameter value is << parameters.p >>"
 
 workflows:
   version: 2
