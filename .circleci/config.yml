@@ -1,25 +1,27 @@
 version: 2.1
 
-parameters:
-  p:
-    type: integer
-    default: 1
+commands:
+  print:
+    parameters:
+      message:
+        type: string
+    steps:
+      - run: echo << parameters.message >>
 
 jobs:
-  build:
-    docker:
-      - image: cimg/base:2023.11
-    parallelism: << parameters.p >>
+  daily-message:
+    machine:
+      image: ubuntu-2004:current
+    resource_class: large
     parameters:
-      p:
-        type: integer
+      message:
+        type: string
     steps:
-      - checkout
-      - run: echo "<< parameters.p >>"
+      - print:
+          message: Printing << parameters.message >>
 
 workflows:
-  version: 2
-  workflow:
+  my-workflow:
     jobs:
-      - build:
-          p: << pipeline.parameters.p >>
+      - daily-message:
+         message: echo << parameters.message >>
