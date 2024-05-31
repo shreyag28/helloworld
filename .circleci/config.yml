@@ -65,5 +65,5 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-and-test:
-          myparam: "value1"
+          myparam: << pipeline.parameters.myparam >>
       - docker-job
