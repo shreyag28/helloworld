@@ -5,7 +5,7 @@ version: 2.1
 parameters:
   myparam:
     type: string
-    default: "default_value"
+    #default: "default_value"
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
