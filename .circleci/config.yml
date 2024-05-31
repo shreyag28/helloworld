@@ -2,16 +2,18 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-parameters:
-  myparam:
-    type: string
-    default: "default_value"
+
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
   build-and-test:
+    parameters:
+      myparam:
+         type: string
+         default: "default_value"
+      parallelism: << parameters.myparam >>    
     docker:
       - image: cimg/openjdk:11.0
     parameters:
@@ -19,7 +21,7 @@ jobs:
         type: string  
     steps:
       - checkout  
-      - run: echo "The parameter value is  << pipeline.parameters.myparam >>"
+     # - run: echo "The parameter value is  << pipeline.parameters.myparam >>"
       - run:
           name: Build
           command: mvn -B -DskipTests clean package
