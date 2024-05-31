@@ -11,8 +11,8 @@ jobs:
   build-and-test:
     parameters:
       myparam:
-         type: string
-         default: "default_value"
+         type: integer
+         default: 1
       parallelism: << parameters.myparam >>    
     docker:
       - image: cimg/openjdk:11.0
