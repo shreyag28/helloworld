@@ -19,6 +19,7 @@ jobs:
         type: string  
     steps:
       - checkout  
+      - run: echo "The parameter value is << parameters.myparam >>"
       - run:
           name: Build
           command: mvn -B -DskipTests clean package
