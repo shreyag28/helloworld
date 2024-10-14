@@ -31,10 +31,18 @@ jobs:
          
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+
 workflows:
-  Buil and test : # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
+  Build and test:
     jobs:
-      - build-and-test
-           context:
-             - alm_lt
+      - build-and-test:
+          context:
+            - alm_lt
+            - my-context
+#workflows:
+ # Buil and test : # This is the name of the workflow, feel free to change it to better match your workflow.
+    # Inside the workflow, you define the jobs you want to run.
+  #  jobs:
+   #   - build-and-test
+    #       context:
+     #        - alm_lt
