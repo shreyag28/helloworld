@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Build
-          command: mvn -B -DskipTests clean package
+          #command: mvn -B -DskipTests clean package
           command: echo $MY_ENV
       - run:
           name: Test
